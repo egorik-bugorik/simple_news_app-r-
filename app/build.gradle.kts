@@ -1,8 +1,12 @@
 import buildSrc.src.main.java.Dagger
+import buildSrc.src.main.java.DaggerHilt
+import buildSrc.src.main.java.Retrofit
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -69,5 +73,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    implementation(Dagger.dagger_lib)
+    implementation(Retrofit.retrofitItself)
+    implementation(Retrofit.gsonConvrt)
+    kapt(DaggerHilt.compiler)
+    implementation(DaggerHilt.hilt)
 }
