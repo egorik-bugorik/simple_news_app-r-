@@ -25,7 +25,7 @@ interface NetworkService {
 
 
     @GET("top-headlines")
-    fun getTopSearch(@Query("search") search: String): TopHeadlinesResponse
+    fun getTopQuery(@Query("search") search: String): TopHeadlinesResponse
 
 
     @GET("top-headlines")
