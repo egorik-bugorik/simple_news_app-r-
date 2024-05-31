@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import by.gorik.newsapp.ui.HomeScreen
-import by.gorik.newsapp.ui.base.openCustoChromeTab
+import by.gorik.newsapp.ui.base.openCustomChromeTab
 import by.gorik.newsapp.ui.country.CountryRoute
 import by.gorik.newsapp.ui.headlines.offline.NewsOfflineRoute
 import by.gorik.newsapp.ui.headlines.online.NewsOnlineRoute
@@ -39,7 +39,7 @@ fun SetupNavGraph(navController: NavHostController) {
             NewsOnlineRoute(
                 navController=navController,
                 onNewsClick={
-                    openCustoChromeTab(context,it)
+                    openCustomChromeTab(context,it)
                 }
             )
 
@@ -49,7 +49,7 @@ fun SetupNavGraph(navController: NavHostController) {
             NewsOfflineRoute(
                 navController=navController,
                 onNewsClick={
-                    openCustoChromeTab(context,it)
+                    openCustomChromeTab(context,it)
                 }
             )
 
@@ -59,7 +59,7 @@ fun SetupNavGraph(navController: NavHostController) {
             NewsPaginationRoute(
                 navController=navController,
                 onNewsClick={
-                    openCustoChromeTab(context,it)
+                    openCustomChromeTab(context,it)
                 }
             )
 
@@ -69,7 +69,7 @@ fun SetupNavGraph(navController: NavHostController) {
             NewsSearchRoute(
                 navController=navController,
                 onNewsClick={
-                    openCustoChromeTab(context,it)
+                    openCustomChromeTab(context,it)
                 }
             )
 
@@ -79,7 +79,7 @@ fun SetupNavGraph(navController: NavHostController) {
             NewsBySourceRoute(
                 navController=navController,
                 onNewsClick={
-                    openCustoChromeTab(context,it)
+                    openCustomChromeTab(context,it)
                 }
             )
 
