@@ -5,7 +5,7 @@ package buildSrc.src.main.java
 object Versions{
     val dagHilt = "2.44"
     val retrofit  = "2.11.0"
-    val dagger = ""
+    val room  = "2.6.1"
 
 
 
@@ -19,12 +19,17 @@ object Retrofit{
 
 
 }
-object Dagger{
-
-    val dagger_lib = "com.google.dagger:dagger:"+Versions.dagger
-}
 
 object DaggerHilt{
     val hilt =   "com.google.dagger:hilt-android:"+Versions.dagHilt
+    val hiltRoot =   "com.google.dagger.hilt.android"
     val compiler =   "com.google.dagger:hilt-android-compiler:"+Versions.dagHilt
+}
+object Room{
+    val roomRun =   "androidx.room:room-ktx:"+Versions.room
+    val roomRoot =   "androidx.room"
+    val ktx =   "androidx.room:room-runtime:"+Versions.room
+    val compiler =   "androidx.room:room-compiler:"+Versions.room
+
+
 }

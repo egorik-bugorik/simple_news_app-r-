@@ -1,12 +1,14 @@
-import buildSrc.src.main.java.Dagger
 import buildSrc.src.main.java.DaggerHilt
 import buildSrc.src.main.java.Retrofit
+import buildSrc.src.main.java.Room
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id ("kotlin-kapt")
+
     id("com.google.dagger.hilt.android")
+    id ("kotlin-kapt")
+    id ("androidx.room")
 }
 
 android {
@@ -45,6 +47,10 @@ android {
     buildFeatures {
         compose = true
     }
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
@@ -77,4 +83,8 @@ dependencies {
     implementation(Retrofit.gsonConvrt)
     kapt(DaggerHilt.compiler)
     implementation(DaggerHilt.hilt)
+
+    implementation(Room.roomRun)
+    implementation(Room.ktx)
+    kapt(Room.compiler)
 }
