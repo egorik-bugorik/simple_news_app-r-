@@ -1,4 +1,5 @@
 import buildSrc.src.main.java.DaggerHilt
+import buildSrc.src.main.java.Navigation
 import buildSrc.src.main.java.Paging
 import buildSrc.src.main.java.Retrofit
 import buildSrc.src.main.java.Room
@@ -92,4 +93,8 @@ dependencies {
 
     implementation(Paging.pagingRuntime)
     implementation(Paging.compose)
+
+
+    implementation(Navigation.navigationUi)
+    implementation(Navigation.navigationCompose)
 }

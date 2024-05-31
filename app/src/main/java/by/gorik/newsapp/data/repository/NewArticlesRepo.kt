@@ -10,10 +10,15 @@ import by.gorik.newsapp.data.local.database.NewsDatabase
 import by.gorik.newsapp.data.local.entity.Article
 import by.gorik.newsapp.data.model.ApiArticle
 import by.gorik.newsapp.utils.Constants
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flatMapConcat
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.runBlocking
 
 class NewArticlesRepo(
     val net: NetworkService,

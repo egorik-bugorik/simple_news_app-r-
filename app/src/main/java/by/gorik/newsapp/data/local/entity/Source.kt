@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 data class Source(
     @ColumnInfo("name")
     val name :String = "",
-    @ColumnInfo("id")
+    @ColumnInfo("source_id")
     val id :String? = null
 ) {
 

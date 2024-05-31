@@ -2,10 +2,13 @@ package by.gorik.newsapp.data.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Embedded
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 import by.gorik.newsapp.data.model.ApiArticle
 import com.google.gson.annotations.SerializedName
 
+
+@Entity(tableName = "article")
 data class Article(
 
     @PrimaryKey
@@ -24,7 +27,7 @@ data class Article(
     @ColumnInfo("urlToImage")
     val urlToImage:String?=null,
 
-    @ColumnInfo("source")
+
      @Embedded val source:Source
 ) {
     fun toApiArticle():ApiArticle{
@@ -32,6 +35,8 @@ data class Article(
             title = title,
             description = description.let{it.toString()},
             url = url,
+
+
             urlToImage = urlToImage.let{it.toString()},
             source = source.toApiSource()
         )

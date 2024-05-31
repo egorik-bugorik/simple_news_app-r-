@@ -3,6 +3,7 @@ package buildSrc.src.main.java
 
 
 object Versions{
+    val navigation ="2.7.7"
     val paging = "3.3.0"
     val dagHilt = "2.44"
     val retrofit  = "2.11.0"
@@ -23,6 +24,13 @@ object Retrofit{
 object Paging{
     val pagingRuntime="androidx.paging:paging-runtime:"+Versions.paging
     val compose="androidx.paging:paging-compose:" +Versions.paging
+
+
+
+}
+object Navigation{
+    val navigationUi="androidx.navigation:navigation-ui-ktx:"+Versions.navigation
+    val navigationCompose="androidx.navigation:navigation-compose:" +Versions.navigation
 
 
 
