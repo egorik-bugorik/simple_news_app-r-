@@ -3,6 +3,7 @@ package buildSrc.src.main.java
 
 
 object Versions{
+    val paging = "3.3.0"
     val dagHilt = "2.44"
     val retrofit  = "2.11.0"
     val room  = "2.6.1"
@@ -19,6 +20,15 @@ object Retrofit{
 
 
 }
+object Paging{
+    val pagingRuntime="androidx.paging:paging-runtime:"+Versions.paging
+    val compose="androidx.paging:paging-compose:" +Versions.paging
+
+
+
+}
+
+
 
 object DaggerHilt{
     val hilt =   "com.google.dagger:hilt-android:"+Versions.dagHilt

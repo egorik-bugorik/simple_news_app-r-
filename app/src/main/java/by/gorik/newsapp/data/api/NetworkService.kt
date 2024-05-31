@@ -30,7 +30,7 @@ interface NetworkService {
 
     @GET("top-headlines")
     fun getTopPaging(
-        @Query("country") search: String = Constants.DEFAULT_COUNTRY,
+        @Query("country") country: String = Constants.DEFAULT_COUNTRY,
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int,
         ): TopHeadlinesResponse

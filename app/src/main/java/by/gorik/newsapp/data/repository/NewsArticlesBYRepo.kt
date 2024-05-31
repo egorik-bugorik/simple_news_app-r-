@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 
-class NewsArticlesRepo(val net: NetworkService) {
+class NewsArticlesBYRepo(val net: NetworkService) {
 
     //    ::: GET by COUNTRY
     fun getArticlesbyCountry(country: String): Flow<List<ApiArticle>> {
