@@ -1,6 +1,8 @@
 package by.gorik.newsapp.utils
 
 object Constants{
+    val SEARCH_NEWS = "SEARCH_NEWS"
+    val MIN_SEARCH_LEN = 5
     val NEWS_PAGING = "NEWS_PAGING"
     val NEWS_ONLINE = "NEWS ONLINE"
     val SOURCES_CHOOSE = "Choose  news source"
