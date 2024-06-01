@@ -21,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -34,7 +33,6 @@ import by.gorik.newsapp.ui.base.ShowError
 import by.gorik.newsapp.ui.base.ShowLoading
 import by.gorik.newsapp.ui.base.UiState
 import by.gorik.newsapp.utils.Constants
-import kotlin.random.Random
 
 @Composable
 fun LanguageRoute(
@@ -80,7 +78,10 @@ fun LanguageScreen(
     Column(modifier = Modifier.padding(padding)) {
 
         when (state) {
-            is UiState.Error -> ShowError(state.mesg)
+            is UiState.Error -> ShowError(state.mesg, true) {
+                onRetryClick()
+            }
+
             UiState.Loading -> ShowLoading()
             is UiState.Success -> LanguageList(
                 countries = state.data,

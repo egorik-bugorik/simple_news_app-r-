@@ -14,6 +14,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import by.gorik.newsapp.data.model.ApiArticle
 
 fun openCustomChromeTab(context: Context, it: String) {
     TODO()
@@ -49,11 +50,16 @@ fun GorikAppBar(
 }
 
 @Composable
-fun ShowError(mesg: String) {
+fun ShowError(mesg: String, enabled: Boolean = false, function: () -> Unit = {}) {
 
 }
 
 @Composable
 fun ShowLoading() {
     TODO("Not yet implemented")
+}
+
+@Composable
+fun ArticleList(data: List<ApiArticle>, onNewsClick: (String) -> Unit) {
+
 }

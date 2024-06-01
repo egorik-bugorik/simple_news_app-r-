@@ -26,7 +26,7 @@ class NewArticlesRepo(
 
 ) {
 
-    fun getArticlesOnline(country: String): Flow<List<ApiArticle>> {
+    fun getArticlesOnline(country: String = Constants.DEFAULT_COUNTRY): Flow<List<ApiArticle>> {
         return flow {
             emit(net.getTop(country))
         }.map { it.articles }
