@@ -63,3 +63,8 @@ fun ShowLoading() {
 fun ArticleList(data: List<ApiArticle>, onNewsClick: (String) -> Unit) {
 
 }
+
+@Composable
+fun Article(apiArticle: ApiArticle, onNewsClick: (String) -> Unit) {
+
+}
