@@ -85,6 +85,7 @@ dependencies {
     implementation(Retrofit.gsonConvrt)
     kapt(DaggerHilt.compiler)
     implementation(DaggerHilt.hilt)
+    implementation(DaggerHilt.hiltNavigatioCompose)
 
     implementation(Room.roomRun)
     implementation(Room.ktx)
@@ -97,4 +98,6 @@ dependencies {
 
     implementation(Navigation.navigationUi)
     implementation(Navigation.navigationCompose)
+
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.1")
 }

@@ -41,6 +41,7 @@ object Navigation{
 object DaggerHilt{
     val hilt =   "com.google.dagger:hilt-android:"+Versions.dagHilt
     val hiltRoot =   "com.google.dagger.hilt.android"
+    val hiltNavigatioCompose =   "androidx.hilt:hilt-navigation-compose:1.2.0"
     val compiler =   "com.google.dagger:hilt-android-compiler:"+Versions.dagHilt
 }
 object Room{
