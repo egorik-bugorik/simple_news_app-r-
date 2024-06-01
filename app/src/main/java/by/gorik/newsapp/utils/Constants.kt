@@ -1,6 +1,7 @@
 package by.gorik.newsapp.utils
 
 object Constants{
+    val LANGUAGE_CHOOSE = "Choose your language"
     const val COUNTRY_CHOOSE = "Choose country"
     const val DEFAULT_COUNTRY = "By"
     const val INITIAL_PAGE = 1
