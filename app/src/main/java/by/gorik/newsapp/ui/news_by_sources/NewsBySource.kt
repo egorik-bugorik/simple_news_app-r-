@@ -3,7 +3,6 @@ package by.gorik.newsapp.ui.news_by_sources
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import by.gorik.newsapp.data.model.ApiArticle
@@ -66,7 +65,7 @@ fun NewsByScreen(onNewsClick: (String) -> Unit, state: UiState<List<ApiArticle>>
             ShowLoading()
         }
         is UiState.Success -> {
-            ArticleList(data = state.data, onNewsClick =onNewsClick )
+            ArticleList(articles = state.data, onNewsClick =onNewsClick )
         }
     }
 

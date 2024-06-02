@@ -3,6 +3,8 @@ package buildSrc.src.main.java
 
 
 object Versions{
+    val browser= "1.4.0"
+    val coil = "2.6.0"
     val navigation ="2.7.7"
     val paging = "3.3.0"
     val dagHilt = "2.44"
@@ -20,6 +22,12 @@ object Retrofit{
 
 
 
+}
+object Coil{
+    val coilCompose="io.coil-kt:coil-compose:"+Versions.coil
+}
+object Browser{
+    val browser="androidx.browser:browser"+Versions.browser
 }
 object Paging{
     val pagingRuntime="androidx.paging:paging-runtime:"+Versions.paging
