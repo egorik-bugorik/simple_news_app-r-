@@ -80,9 +80,7 @@ fun CountryScreen(
     Column(modifier = Modifier.padding(padding)) {
 
         when (state) {
-            is UiState.Error -> ShowError(state.mesg, true) {
-                onRetryClick()
-            }
+            is UiState.Error -> ShowError(state.mesg)
 
             UiState.Loading -> ShowLoading()
             is UiState.Success -> CountryList(

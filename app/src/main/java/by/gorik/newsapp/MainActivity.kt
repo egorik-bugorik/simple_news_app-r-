@@ -25,9 +25,12 @@ import androidx.navigation.compose.rememberNavController
 import by.gorik.newsapp.navigation.SetupNavGraph
 import by.gorik.newsapp.ui.theme.NewsAppTheme
 import by.gorik.newsapp.utils.Constants
+import dagger.hilt.android.AndroidEntryPoint
 
 @OptIn(ExperimentalMaterial3Api::class)
 
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     lateinit var navController: NavHostController

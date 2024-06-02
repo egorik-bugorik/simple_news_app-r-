@@ -19,8 +19,12 @@ import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class NewArticlesRepo(
+
+@Singleton
+class NewArticlesRepo @Inject constructor(
     val net: NetworkService,
     val db: DbServiceImpl
 

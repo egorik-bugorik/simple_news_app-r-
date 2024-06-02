@@ -12,7 +12,7 @@ data class ApiArticle(
     val title:String="",
 
     @SerializedName("description")
-    val description:String="",
+    val description:String?="",
 
     @SerializedName("url")
     val url:String="",

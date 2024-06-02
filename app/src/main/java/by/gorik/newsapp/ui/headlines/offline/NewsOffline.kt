@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import by.gorik.newsapp.data.local.entity.Article
@@ -21,7 +22,7 @@ import by.gorik.newsapp.utils.Constants
 fun NewsOfflineRoute(
     navController: NavHostController,
     onNewsClick: (String) -> Unit,
-    vm: NewsOfflineVm
+    vm: NewsOfflineVm  = hiltViewModel()
 ) {
 
     val uiStat = vm.uiState.collectAsStateWithLifecycle().value

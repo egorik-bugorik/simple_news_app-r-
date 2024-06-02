@@ -144,7 +144,7 @@ Column(
 ) {
 
 NewsBannerImage(article)
-NewsDescription(article.description)
+NewsDescription(article.description?:"")
 NewsTitle(article.title)
 NewsSource(article.source)
 

@@ -6,8 +6,11 @@ import by.gorik.newsapp.data.model.ApiSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class SearchRepo(val net:NetworkService) {
+@Singleton
+class SearchRepo @Inject constructor(val net:NetworkService) {
     fun getNewsSearch(query:String):Flow<List<ApiArticle>>{
         return flow{
             emit(net.getTopQuery(query))

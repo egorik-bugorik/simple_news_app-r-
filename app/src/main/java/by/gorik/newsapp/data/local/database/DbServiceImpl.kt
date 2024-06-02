@@ -2,8 +2,9 @@ package by.gorik.newsapp.data.local.database
 
 import by.gorik.newsapp.data.local.entity.Article
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class DbServiceImpl(val db:NewsDatabase) : DbService {
+class DbServiceImpl @Inject constructor(val db:NewsDatabase) : DbService {
     override fun getArticles(): Flow<List<Article>> {
         return db.getDao().getArticles()
     }

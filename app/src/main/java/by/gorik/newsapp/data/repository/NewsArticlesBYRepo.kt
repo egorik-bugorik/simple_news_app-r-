@@ -5,8 +5,11 @@ import by.gorik.newsapp.data.model.ApiArticle
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class NewsArticlesBYRepo(val net: NetworkService) {
+@Singleton
+class NewsArticlesBYRepo @Inject constructor(val net: NetworkService) {
 
     //    ::: GET by COUNTRY
     fun getArticlesbyCountry(country: String): Flow<List<ApiArticle>> {

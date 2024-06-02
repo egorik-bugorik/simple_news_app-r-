@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
@@ -19,10 +20,10 @@ import by.gorik.newsapp.ui.base.ShowLoading
 import by.gorik.newsapp.utils.Constants
 
 @Composable
-fun NewsOnlineRoute(
+fun NewsPaginationRoute(
     navController: NavHostController,
     onNewsClick: (String) -> Unit,
-    vm: NewsPagingVm
+    vm: NewsPagingVm = hiltViewModel()
 ) {
 
     val articlesPag = vm.uiState.collectAsLazyPagingItems()

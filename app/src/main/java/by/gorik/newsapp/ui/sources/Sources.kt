@@ -59,7 +59,10 @@ fun SourcesRoute(
             state = uiStat,
             onSourcesClick = { sources: ApiSource ->
                 navController.navigate(route = Screen.NewsBySource.passData(sourceId = sources.id!!))
-            })
+            }
+        ) {
+            vm.fetchSources()
+        }
 
 
     }
@@ -69,7 +72,8 @@ fun SourcesRoute(
 fun SourcesScreen(
     padding: PaddingValues,
     onSourcesClick: (ApiSource) -> Unit,
-    state: UiState<List<ApiSource>>
+    state: UiState<List<ApiSource>>,
+    onRetryClick: () -> Unit
 ) {
 
 

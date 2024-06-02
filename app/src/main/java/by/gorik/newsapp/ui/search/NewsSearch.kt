@@ -17,6 +17,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import by.gorik.newsapp.data.model.ApiArticle
@@ -27,7 +28,7 @@ import by.gorik.newsapp.utils.Constants
 @Composable
 fun NewsSearchRoute(
     navController: NavHostController,
-    searchVm: SearchVm,
+    searchVm: SearchVm = hiltViewModel(),
     onNewsClick: (String) -> Unit
 ) {
     val uiState = searchVm.uiState.collectAsStateWithLifecycle().value

@@ -3,6 +3,7 @@ package by.gorik.newsapp.ui.news_by_sources
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import by.gorik.newsapp.data.model.ApiArticle
@@ -14,7 +15,7 @@ import by.gorik.newsapp.ui.base.UiState
 @Composable
 fun NewsBySourceRoute(
     navController: NavHostController,
-    vm: NewsByVm,
+    vm: NewsByVm = hiltViewModel(),
     onNewsClick: (String) -> Unit,
     sourceId: String? = null,
     languageId: String? = null,
@@ -23,20 +24,15 @@ fun NewsBySourceRoute(
 
 
     LaunchedEffect(key1 = Unit, block = {
-        when {
-            !sourceId.isNullOrEmpty() -> {
+            if(!sourceId.isNullOrEmpty()) {
                 vm.fetchBySource(sourceId)
 
+            }else if(!languageId.isNullOrEmpty()) {
+                vm.fetchByLanguage(languageId)
+            }else if(!countryCode.isNullOrEmpty()) {
+                vm.fetchByCountry(countryCode)
             }
 
-            !languageId.isNullOrEmpty() -> {
-                vm.fetchBySource(languageId)
-            }
-
-            !countryCode.isNullOrEmpty() -> {
-                vm.fetchBySource(countryCode)
-            }
-        }
 
 
     })

@@ -11,13 +11,16 @@ import by.gorik.newsapp.utils.DispatcherProvider
 import by.gorik.newsapp.utils.ResourceProvider
 import by.gorik.newsapp.utils.logger.Logger
 import by.gorik.newsapp.utils.network.NetworkHelper
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class NewsPagingVm(
+@HiltViewModel
+class NewsPagingVm @Inject constructor(
     val newsRepo: NewArticlesRepo,
     val logger: Logger,
     val networkHelper: NetworkHelper,

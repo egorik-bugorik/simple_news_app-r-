@@ -12,24 +12,24 @@ import javax.inject.Singleton
 interface NetworkService {
 
     @GET("top-headlines")
-    fun getTop(@Query("country") country: String = Constants.DEFAULT_COUNTRY): TopHeadlinesResponse
+    suspend fun getTop(@Query("country") country: String = Constants.DEFAULT_COUNTRY): TopHeadlinesResponse
 
     @GET("top-headlines")
-    fun getTopCountry(@Query("country") country: String): TopHeadlinesResponse
+    suspend fun getTopCountry(@Query("country") country: String): TopHeadlinesResponse
 
     @GET("top-headlines")
-    fun getTopLanguage(@Query("language") language: String): TopHeadlinesResponse
+    suspend fun getTopLanguage(@Query("language") language: String): TopHeadlinesResponse
 
     @GET("top-headlines")
-    fun getTopSources(@Query("sources") sources: String): TopHeadlinesResponse
-
-
-    @GET("top-headlines")
-    fun getTopQuery(@Query("search") search: String): TopHeadlinesResponse
+    suspend fun getTopSources(@Query("sources") sources: String): TopHeadlinesResponse
 
 
     @GET("top-headlines")
-    fun getTopPaging(
+    suspend fun getTopQuery(@Query("search") search: String): TopHeadlinesResponse
+
+
+    @GET("top-headlines")
+    suspend fun getTopPaging(
         @Query("country") country: String = Constants.DEFAULT_COUNTRY,
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int,
@@ -37,5 +37,5 @@ interface NetworkService {
 
 
     @GET("top-headlines/sources")
-    fun getSources(): NewsSourcesResponse
+    suspend  fun getSources(): NewsSourcesResponse
 }
